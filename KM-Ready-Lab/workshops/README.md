@@ -1,6 +1,8 @@
-# Knowledge Mining Workshop
+# Azure Cognitive Search: From 0 to MVP in Under an Hour
 
-**Welcome to the Knowledge Mining workshop!** 
+**Welcome to the Ready Technical Lab for Azure Cognitve Search!** 
+
+The main focus of this lab is to demonstrate some of the new capabilities now available in the Azure Portal that enable you to build a end to end Knowledge Mining solution with Azure Cognitive Search.  No more flipping between multiple tools like Visual Studio and Postman, now you can have a working end to end solution, using your own data, built without ever leaving the Azure Portal.  These capabilities allow just about anyone to quickly and easily stand up a customer ready MVP or Demo, and set up the necessary components needed to move forward with development of a production ready solution.
 
 During this lab, we will be exploring a data set that is comprised of clinical trials in PDF format.  This demo data set contains over 100 records which contain complex medical terms and disease information in an unstructured format - meaning that there is no easy way to search the data set for information or records that pertain to a specific disease, like cirrhosis.  And worse yet, if (like the authors of this lab) you don't always accurately spell cirrhosis, you may have no way of ever finding the information you're looking for - structured or otherwise.
 
@@ -8,17 +10,19 @@ The challenge is, how can you take a vast amount of unstructured content and all
 
 ![](images/unstructured.png)
 
-This is where the power of Knowledge Mining with Azure Cognitive Search comes to the rescue.  Using the skills and techniques we'll be teaching you today, you will be able to quickly and easily ingest this content, build custom skills to identify and extract specific medical terms related to disease conditions and then either search for information through a web front end
+This is where the power of Knowledge Mining with Azure Cognitive Search comes to the rescue.  Using the skills and techniques we'll be teaching you today, you will be able to quickly and easily ingest this content, learn how to add and modify powerful skills, such as custom entity lookup and PII extraction, to identify and extract specific medical terms related to disease conditions.  You will be visualizing these results using the Azure Search App tool (a basic web front end).
 
-![](images/results.png)
++ *Note: The Azure Search App Tool is for demonstration purposes only and should not be used for Production deployment*.
+
+![](images/CreateApp.jpg)
 
 or project the data into powerful visuals  you create in PowerBI.  
 
 ![](images/mod5/ks-pbi-visual5-filledmap-graph.png)
 
-Along the way, we will also show you how easy and powerful it is to introduce more advanced search topics like phonetic search to your index (so that your users can find the information they are looking for regardless of their spelling skills) and boost relevancy of results.  The end result of today's workshop will be a fully searchable medical repository that will allow users to find and extract really powerful information, even if they are not trained medical professionals.  
+At the end of this 60 minute lab, you'll have learned how to use Azure Cognitive Search to build a fully searchable medical repository that will allow users to find and extract really powerful information without ever leaving the Azure Portal.  
 
-More concretely, you'll learn how to build an Azure Cognitive Search Index and Knowledge Store repository through the Azure Portal. From there, we'll explore more advanced concepts in Azure Cognitive Search, build custom skills to extend the solution and create a basic web page front end to visualize your search results. Finally, you will build a PowerBI dashboard on top of your Knowledge Store to demonstrate how you can use your data store for data visualization and advanced analytics. We have also included an Optional Module 7 which is a stand alone module that will walk you through indexing data from an AzureSQL data source. We encourage you to walk through this module on your own time and review how this further extends the data available in your solution.
+We will also provide you links to additional resources and tools that can be used to further enhance and extend your MVP to build a truely robust search solution for your customers.  We encourage you to walk through these materials on your own time to learn how these capabilities can be leveraged to suit any customers business needs.
 
 + *Note: Please make sure to complete all of pre-requisites listed in Module 0 before moving on, as you will not be able to complete the exercises in this lab without them*.
 
