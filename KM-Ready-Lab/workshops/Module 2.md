@@ -1,67 +1,74 @@
-# Module 2: Visualizing the Results with a Demo FrontEnd
-Now that you've built your Search index, we'll take a moment to build and deploy a simple web-page that will allow you to visualize your initial search results.  We'll come back to this view throughout the lab and take special note of how our search results change as we add additional features and capabilities.
+# Module 2: Visualizing the Results with the Create Search App
+Now that you've built your Search index, we'll take a moment to visualize your results using the new **Create Search App** feature in the Azure Portal.  This application allows you to quickly design and deploy a very basic web page that can be used to explore your data and demonstrate the power of Azure Cognitive Search.
 
-To get started with this exercise, we will be using and getting familiar with the [Knowledge Mining solution accelerator](https://github.com/Azure-Samples/azure-search-knowledge-mining) to create our front-end experience.  This accelerator was published to provide developers with all of the steps and tools required to build a working minimally viable knowledge mining solution.  Take a few moments to note that it contains modules to: deploy the required Azure resources; build custom skills; and present the results in a simple, but elegant front-end.  At the end of this lab, your results will look similar to this:
+*Note, the web page that is developed by the Create Search App is for DEMO purposes only, it should not be used to implement a production front end.*
 
-![](images/intresults.png)
+To get started, click on your *clinical-trials-small* index, this will bring you back to the *Search Explorer* window.
 
-## 1. Clone the repository
-```
-git clone https://github.com/Azure-Samples/azure-search-knowledge-mining.git
-```
+Click on Create Search App at the top of the screen.
 
-## 2. Start the project
+![](images/createappbutton.png)
 
-Open **CognitiveSearch.UI.csproj** (02-Web UI Template\CognitiveSearch.UI) in Visual Studio 
+You should now see the application designer view that we will be walking through to build our web page.
 
-## 3. Update appsettings.json
+![](design1.png)
 
-Update the following fields in the *appsettings.json* file to connect the web app to your storage account, search index, and app insights account:
+Let's walk through your options step-by-step:
 
-```json
-  "SearchServiceName": "Your Search Service Name",
-  "SearchApiKey": "Your Search Service key",
-  "SearchIndexName": "clinical-trials-small",
-  "InstrumentationKey": "",
-  "StorageAccountName": "Your storage Account Name",
-  "StorageAccountKey": "Your Storage Account Key",
-  "StorageContainerAddress": "Your Storage Container Address",
-  "KeyField": "metadata_storage_path",
-  "IsPathBase64Encoded": true,
-  "GraphFacet": "diseases"
-```
- 
-### Notes
-1. **SearchServiceName** should be set to the name of the search service. (i.e. "myservice")
-1. **SearchApiKey** should be to the name of the search service. (i.e. "B8365AC95521089B7E3FA4CC98435")
-1. **SearchIndexName** should be set to the name of the index (i.e. "clinical-trials-small")
-1. **StorageAccountName** should be set to the name of the storage account (i.e. "mystorageaccount")
-1. **StorageContainerAddress** should be in the following format: *"https://*storageaccountname*.blob.core.windows.net/*containername*"*
-1. **InstrumentationKey** is an optional field. The instrumentation key connects the web app to Application Insights in order to populate the Power BI reports.
-1. **KeyField** should be set to the field specified as a key document Id in the index. (i.e. "metadata_storage_path")
-1. Sometimes metadata_storage_path is the key, and it gets base64 encoded. In that case set **IsPathBase64Encoded** to true.
-1. The **GraphFacet** is used for generating the relationship graph, set it to the name of the facet that you would like to use (i.e. "diseases"). Or leave blank if you won't use the node graph.
+## Individual result
+This page allows you to format the layout of how you want your search results to be displayed in teh web page.  You'll see some very basic options to add a Thumbnail image, select a title and descritpion level information for your search results.
+
+1. Thumbnails are most powerful when you have Image files to display with your search results. As the dataset we are using today does not contain a strong set of images, we're going to leave this blank.
+2. Title - This is going to display as a title or header on your search results.  Click on the down arrow and select *diseases* for the title.
+3. Description is the text or content you want to display with your title field.  Click on the down arrow and select *content*.
+
+![](individualresult.png)
+
+Click on the *Next* button.
+
+## Sidebar
+You are now on the Sidebar design page.  The sidebar is where you can help to guide the users search experience, by adding the facets you created during the index design process as well as choosing which order you'd like to display them in.  You'll notice that locations and diseases have automatically populated as we had marked these fields as *facetable* during the index creation process.  We will leave these default options for now.
+
+![](sidebar.png)
+
+Click *Next*
+
+## Suggestions
+
+This page allows you to choose and customize which fields wil be displayed as suggestions when you type into the search bar dropdown.  Fields you select as Suggestions on this page should have been marked with the Suggester flag during index creation.  You'll see that *diseases* and *trials* display by default.  Let's add *locations* to this list  and click on the checkbox to *Show Field Name*.
+
+![](suggestions.png)
+
+Click on **Create Search App** at the bottom of the screen. 
+
+You will see message that your download is ready and that to use the generated website, CORS must be enabled.  Click on the **Download** button.
+
+![](download.png)
+
+The web page you have designed is now ready to use!  If you are using Microsoft Edge, you will find the Open File link in the bottom left corner of your screen.
+
+![](openfile.png)
+
+Click on the link to launch your new web page.
+
+![](webpage.png)
+
+Type **mor** in the Search window and hit return.  You will now see the articles that contain your search term in the main window.  Note that on the left hand side of the page, you can also further filter your search results using the facets your defined earlier in this exercise.
+
+![](searchresults.png)
+
+Note that on the left hand side of the page, you can also further filter your search results using the facets your defined earlier in this exercise.  Click on a few of these filters to see how your search results change.
+
+You have now successfully built your search index and a demo search app, without ever having to leave the Azure portal!  At this point, you have a fully functioning application/demo that can be used to showcase Azure Cognitive Search to your customers.  As noted however, the webpage front end developed with the Create Search app is *not* production ready and should not be used as the front end for any production solution you would develop.  
+
+To further accelerate your development efforts, we have provided you with a number of resources that can be used to build a production ready front-end search experience.
+
+1. [The JFK Files](https://github.com/microsoft/AzureSearch_JFK_Files)
+2. [The KM Solution Accelerator](https://github.com/Azure-Samples/azure-search-knowledge-mining)
+
+And you are always welcome to build your own custom front-end experience as customer needs dictate.  Connection to your Azure Search index is as easy as integrating an API call through a tool such as Visual Studio to bring your search experience to life.
 
 
-###
-*Important:* 
-While this tutorial is optimizing for efficiency of allowing you to see results, and investigate the code, please note that entering your credentials into code is not a good practice to follow. We recommend you use a service like [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/key-vault-overview) to do this.
-
-## 3. Set the **Startup Project**
- 
- ![](images/setstart.png)
- 
-## 4. Run the project and see the results
- 
-![](images/intresults.png)
-
-## 5. Inspect the code
-
-Much of the UI is rendered dynamically by javascript. Some important files to know when making changes to the UI are:
-
-1. **wwroot/js/results.js** - contains the code used to render search results on the UI
-
-2. **wwroot/js/details.js** - contains the code for rending the detail view once a result is selected
 
 ### Next: [Module 3: Introduction to Azure Functions and Custom Skills](Module&#32;3.md)
 
