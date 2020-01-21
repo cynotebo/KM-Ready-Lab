@@ -11,7 +11,7 @@ Click on Create Search App at the top of the screen.
 
 You should now see the application designer view that we will be walking through to build our web page.
 
-![](design1.png)
+![](images/design1.png)
 
 Let's walk through your options step-by-step:
 
@@ -22,14 +22,14 @@ This page allows you to format the layout of how you want your search results to
 2. Title - This is going to display as a title or header on your search results.  Click on the down arrow and select *diseases* for the title.
 3. Description is the text or content you want to display with your title field.  Click on the down arrow and select *content*.
 
-![](individualresult.png)
+![](images/individualresult.png)
 
 Click on the *Next* button.
 
 ## Sidebar
 You are now on the Sidebar design page.  The sidebar is where you can help to guide the users search experience, by adding the facets you created during the index design process as well as choosing which order you'd like to display them in.  You'll notice that locations and diseases have automatically populated as we had marked these fields as *facetable* during the index creation process.  We will leave these default options for now.
 
-![](sidebar.png)
+![](images/sidebar.png)
 
 Click *Next*
 
@@ -37,17 +37,17 @@ Click *Next*
 
 This page allows you to choose and customize which fields wil be displayed as suggestions when you type into the search bar dropdown.  Fields you select as Suggestions on this page should have been marked with the Suggester flag during index creation.  You'll see that *diseases* and *trials* display by default.  Let's add *locations* to this list  and click on the checkbox to *Show Field Name*.
 
-![](suggestions.png)
+![](images/suggestions.png)
 
 Click on **Create Search App** at the bottom of the screen. 
 
 You will see message that your download is ready and that to use the generated website, CORS must be enabled.  Click on the **Download** button.
 
-![](download.png)
+![](images/download.png)
 
 The web page you have designed is now ready to use!  If you are using Microsoft Edge, you will find the Open File link in the bottom left corner of your screen.
 
-![](openfile.png)
+![](images/openfile.png)
 
 Click on the link to launch your new web page.
 
@@ -55,7 +55,7 @@ Click on the link to launch your new web page.
 
 Type **mor** in the Search window and hit return.  You will now see the articles that contain your search term in the main window.  Note that on the left hand side of the page, you can also further filter your search results using the facets your defined earlier in this exercise.
 
-![](searchresults.png)
+![](images/searchresults.png)
 
 Note that on the left hand side of the page, you can also further filter your search results using the facets your defined earlier in this exercise.  Click on a few of these filters to see how your search results change.
 
