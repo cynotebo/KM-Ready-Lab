@@ -47,8 +47,6 @@ You will see message that your download is ready and that to use the generated w
 
 The web page you have designed is now ready to use!  If you are using Microsoft Edge, you will find the Open File link in the bottom left corner of your screen.
 
-![](images/openfile.png)
-
 Click on the link to launch your new web page.
 
 ![](webpage.png)
