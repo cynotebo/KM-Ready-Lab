@@ -1,5 +1,5 @@
 # Module 2: Visualizing the Results with the Create Search App
-Now that you've built your Search index, we'll take a moment to visualize your results using the new **Create Search App** feature in the Azure Portal.  This application allows you to quickly design and deploy a very basic web page that can be used to explore your data and demonstrate the power of Azure Cognitive Search.
+Now that you've built your Search index, we'll take a moment to visualize your results using the new **Create Search App** feature in the Azure Portal.  This is a new experience that we've devloped to allow developers to quickly create standalone search experiences to explore Azure Cognitive Search indexes.
 
 *Note, the web page that is developed by the Create Search App is for DEMO purposes only, it should not be used to implement a production front end.*
 
@@ -16,18 +16,18 @@ You should now see the application designer view that we will be walking through
 Let's walk through your options step-by-step:
 
 ## Individual result
-This page allows you to format the layout of how you want your search results to be displayed in teh web page.  You'll see some very basic options to add a Thumbnail image, select a title and descritpion level information for your search results.
+This page allows you to format the layout of how you want your search results to be displayed in the web page.  You'll see some very basic options to add a Thumbnail image, select a title and descritpion level information for your search results.
 
-1. Thumbnails are most powerful when you have Image files to display with your search results. As the dataset we are using today does not contain a strong set of images, we're going to leave this blank.
-2. Title - This is going to display as a title or header on your search results.  Click on the down arrow and select *diseases* for the title.
-3. Description is the text or content you want to display with your title field.  Click on the down arrow and select *content*.
+1. Thumbnails are most powerful when you have Image files to display with your search results.  For the purposes of the data in this lab, we will set Thumbnail to **metadata_icon**
+2. Title - This is going to display as a title or header on your search results.  Click on the down arrow and select *metadata_storage_name* for the title.
+3. Description is the text or content you want to display with your title field.  Click on the down arrow and select *merged_content*.
 
 ![](images/individualresult.png)
 
 Click on the *Next* button.
 
 ## Sidebar
-You are now on the Sidebar design page.  The sidebar is where you can help to guide the users search experience, by adding the facets you created during the index design process as well as choosing which order you'd like to display them in.  You'll notice that locations and diseases have automatically populated as we had marked these fields as *facetable* during the index creation process.  We will leave these default options for now.
+You are now on the Sidebar design page.  The sidebar is where you can help to guide the users search experience, by adding the facets and filters you created during the index design process as well as choosing which order you'd like to display them in.  The defaults you see populated here are fine for this lab.
 
 ![](images/sidebar.png)
 
@@ -35,7 +35,7 @@ Click *Next*
 
 ## Suggestions
 
-This page allows you to choose and customize which fields wil be displayed as suggestions when you type into the search bar dropdown.  Fields you select as Suggestions on this page should have been marked with the Suggester flag during index creation.  You'll see that *diseases* and *trials* display by default.  Let's add *locations* to this list  and click on the checkbox to *Show Field Name*.
+This page allows you to choose and customize which fields wil be displayed as suggestions when you type into the search bar dropdown.  Fields you select as Suggestions on this page should have been marked with the Suggester flag during index creation.  Set this to **keyphrases**.
 
 ![](images/suggestions.png)
 
