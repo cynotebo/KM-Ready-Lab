@@ -44,13 +44,17 @@ This is the resource you created earlier as part of your initial lab set up and 
 
 ![](images/skillset.png)
 
+### Set the Enrichment Granularity Level
+
+We have made it easy for you to select the level of granularity you want to use to extract your enrichments.  In most cases, the default level of Source field is quite sufficient, however in cases where you have an extremely long document, or need to extract data (such as sentiment or language translation) you may get better results by adjusting the granularity to another level.  In the case, we will be using **Sentence** level granularity for our data extraction.
+
 ### Add enrichments
 
 Name your skillset: *clinical-trials-small*
 
 + Make sure to select the **OCR enrichment** to extract **merged_content** field.
 
-+ Now we can apply an enrichment to the merged_content field to extract the locations. Do this by checking **Extract location names**.
++ Now we can apply an enrichment to the merged_content field to extract data for locations, key phrases, language and text translation. Do this by checking **Extract location names**, **Extract ky phrases**, **Detect language** and **Translate Text**.
 
 + Leave all of the other enrichment boxes blank at this time as we will add in additional skills later in the lab.
 
@@ -70,12 +74,12 @@ The knowledge store supports two types of projections:
 
 For this case, we are going to use Azure table projections 
 
-![](images/addks.png)
+![](images/knowledgestore.png)
 
 We're going to go ahead and create the Knowledge Store now through the Azure Portal and will come back to the visualizations later in the lab.
 
-1. Under **Azure table projections**, make sure *Documents* and *Entities* have been selected. 
-2. Click choose an existing connection and select your storage account.
+1. Under **Azure table projections**, make sure *Documents* *Sentences*, *Key Phrases, *Entities* and *Image details* have been selected. 
+2. Click *choose an existing connection* and select your storage account.
 3. Click on **+ Container** to create a new container called *clinical-trials-small-ks*.
 4. **Select** the container created in the above step.
 
@@ -93,13 +97,21 @@ In this step, you are designing your Azure Cognitive Search index.  This is an i
 
 4.	In the index definition fields:
       + Make sure all the fields are **retrievable**. 
-      + Make sure that the locations field is **retrievable / facetable / filterable / searchable**.
-      + Make sure that the lastUpdatePosted field is **retrievable / filterable / sortable**.
+      + Make sure the fields content and text are set to **retrievable and searchable**
+         + content
+         + translated_text
+         + merged_content
+         + text
+      + Make sure that the following fields are set to **retrievable / facetable / filterable / searchable**.
+         + locations
+         + key phrases
+         + language
+      + Make sure that lastUpdatePosted to **retrievable / facetable /sortable/ filterable**
       + Set **English-Microsoft** as the *Analyzer* for all searchable fields since the content is in English.
       + Select **Suggester** for trials, metadata_author, metadata_title and locations
       + You can make layoutText not searchable/retrievable since we won’t need it during this lab.
 
-      ![](images/indexdef.png)
+      ![](images/indexdesign.png)
 
    5. Click on **Next: Create an indexer**.
 
