@@ -1,5 +1,5 @@
-# Module 6: Analyzing extracted data with PowerBI
-Objective: Now that we projected information to the Knowledge Store, this structured data could be useful in scenarios that go beyond Search. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data
+# Module 4: Analyzing extracted data with PowerBI (Optional)
+In this optional module, we'll show you how you can further extend visualization of the data through Power BI and how this structured data could be useful in scenarios that go beyond Search. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data
 
 Let's look at the tables we created when we built the Knowledge Store in module 1:
 
