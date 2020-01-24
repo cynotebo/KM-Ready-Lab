@@ -24,15 +24,13 @@ Scroll to the bottom of the Indexer Definition JSON file until you see *'cache':
 
 ![](images/cachenull.png)
 
-Replace *null* with the contents of your clipboard, your indexer defintion JSON should not look something like this:
+Replace *null* with the contents of your clipboard and press *Save*, your indexer defintion JSON should not look something like this:
 
 ![](images/cachetrue.png)
 
-Click on the save button and you have now successfully enabled incremental indexing on your search index.
+## Adding/Modifying Skillset JSON
 
-
-
-We are now going to explore how you can add some very powerful skillsets to your search index through the Azure Portal Skillsets editor.  This new capability provides a series of JSON templates that you can easily add and modify to suit your customers needs.  For the purposes of today's lab, we will be working with the **Custom Entity Lookup** skill to add a disease lookup skill to our index.
+We are now going to explore how you can add some very powerful skills to your skillset through the Azure Portal Skillsets editor.  This new capability provides a series of JSON templates that you can easily add and modify to suit your customers needs.  For the purposes of today's lab, we will be working with the **Custom Entity Lookup** skill to add a disease lookup skill to our index.
 
 Click on *Azure Cognitive Search* and then select *Skillsets*.  You should see the **clinical-trials-small** index and can note that it currently contains 4 skills.
 
