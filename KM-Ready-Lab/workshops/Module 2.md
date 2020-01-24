@@ -68,5 +68,5 @@ And you are always welcome to build your own custom front-end experience as cust
 
 
 
-### Next: [Module 3: Introduction to Azure Functions and Custom Skills](Module&#32;3.md)
+### Next: [Module 3: Using the Azure Portal to edit JSON files](Module&#32;3.md)
 
