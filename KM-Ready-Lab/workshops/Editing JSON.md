@@ -1,4 +1,4 @@
-# Using the Azure Portal to Edit JSON files
+# Using the Azure Portal to edit JSON files
 
 In this module, we will be showing you how you can use an Azure Portal JSON editor to add additional skills to your skillset and modify existing skills.  These 'built-in' skills provide you with a quick and easy way to add additional capabilites to your solution to provide a unique experience for your customer.
 
