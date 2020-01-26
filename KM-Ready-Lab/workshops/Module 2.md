@@ -25,7 +25,6 @@ This page allows you to format the layout of how you want your search results to
 ![](images/individualresult.png)
 
 Click on the *Next* button.
-
 ## Sidebar
 You are now on the Sidebar design page.  The sidebar is where you can help to guide the users search experience, by adding the facets and filters you created during the index design process as well as choosing which order you'd like to display them in.  The defaults you see populated here are fine for this lab.
 
@@ -51,11 +50,9 @@ Click on the link to launch your new web page.
 
 ![](webpage.png)
 
-Type **mor** in the Search window and hit return.  You will now see the articles that contain your search term in the main window.
+Type **mor** in the Search window and hit return.  You will now see the articles that contain your search term in the main window.  Note that on the left hand side of the page, you can also further filter your search results using the facets your defined earlier in this exercise.  Click on a few of these filters to see how your search results change.
 
 ![](images/searchresults.png)
-
-Note that on the left hand side of the page, you can also further filter your search results using the facets your defined earlier in this exercise.  Click on a few of these filters to see how your search results change.
 
 You have now successfully built your search index and a demo search app, without ever having to leave the Azure portal!  At this point, you have a fully functioning application/demo that can be used to showcase Azure Cognitive Search to your customers.  As noted however, the webpage front end developed with the Create Search app is *not* production ready and should not be used as the front end for any production solution you would develop.  
 
