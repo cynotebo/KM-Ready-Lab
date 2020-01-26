@@ -43,42 +43,84 @@ On the right had side,  you see the Skill Definition Templates that are provided
 
 ![](images/CustomEntityLookupSkillTemplate.png)
 
-Let's look a little deeper at this JSON template. Notice the Custom Entity Lookup skill allows you to specify a list of entities to find in your text. You can provide this list either inline using the **inlineEntitiesDefinition** parameter or via a SAS URI pointing to a JSON file containing the entities using the **entitiesDefinitionUrl** parameter.
+Let's look a little deeper at this JSON template. Notice the Custom Entity Lookup skill allows you to specify a list of entities to find in your text. You can provide this list either inline using the *inlineEntitiesDefinition* parameter or via a SAS URI pointing to a JSON file containing the entities using the *entitiesDefinitionUrl* parameter.
 
-For this workshop, we have provided you with a container in your blob storage account named 'disease' which contains a file called 'diseases.json', a list of diseases to be used with the Custom Entity Lookup skill. You will need to retrieve the SAS URI for this file to provide as the **entitiesDefinitionUri** parameter of the skill.
+For this workshop, we have provided you with a container in your blob storage account named 'disease' which contains a file called 'diseases.json', a list of diseases to be used with the Custom Entity Lookup skill. You will need to retrieve the SAS URI for this file to provide as the *entitiesDefinitionUri* parameter of the skill.
 
 One easy way to retrieve the SAS URI is by using Azure Storage Explorer. You can right-click on the 'diseases.json' file and select *Get Shared Access Signature*. Set the *Expiry time* to some time in the future, and hit the *Create* button. Use the *Copy* button to copy the *URL*.
 
 ![](images/GetSAS.png)
+![](images/GetSASExpiryTime.png)
+![](images/GetSASCopyUrl.png)
 
 Now you have everything we need to add this skill to your skillset JSON file.  Using the *Custom Entity Lookup Skill* template as a starting guide, fill in all properties as below and add the new skill into the *skills* list in the Skillset JSON.
+
+
+```
+    {
+        "@odata.type": "#Microsoft.Skills.Text.CustomEntityLookupSkill",
+        "name": "customEntityLookup",
+        "description": null,
+        "context": "/document/merged_content/sentences/*",
+        "defaultLanguageCode": "en",
+        "entitiesDefinitionUri": "<enter your SAS URI here>",
+        "inputs": [{
+            "name": "text",
+            "source": "/document/merged_content/sentences/*"
+        }],
+        "outputs": [{
+            "name": "entities",
+            "targetName": "diseases"
+        }],
+        "inlineEntitiesDefinition": []
+    }
+```
 
 ![](images/AddCustomEntityLookupSkill.png)
 
 Note that the output of the skill is a complex type. You will notice in the module we'll only be using the *Name* property of the skill result in our index and knowledge store.
 
 ```
-    {
-        "Name": "morquio",
-        "Matches": [
-            {
-                "Text": "morquio",
-                "Offset": 25,
-                "Length": 7,
-                "MatchDistance": 0.0
-            }
-        ]
-    }
-
+{
+    "Name": "morquio",
+    "Matches": [{
+        "Text": "morquio",
+        "Offset": 25,
+        "Length": 7,
+        "MatchDistance": 0.0
+    }]
+}
 ```
 
 Next, let's add a new knowledge store table projection for the diseases found.
 
 First we need to edit the *Shaper* skill to create the diseases input for projections. Add a new entry to the *inputs* list as shown below.
 
+```
+ {
+     "name": "diseases",
+     "sourceContext": "/document/merged_content/sentences/*/diseases/*",
+     "inputs": [{
+         "name": "disease",
+         "source": "/document/merged_content/sentences/*/diseases/*/Name"
+     }]
+ }
+```
+
 ![](images/EditShaperSkill.png)
 
 Next we need to add the new *clinicalTrialsSmallDiseases* table projection to the knowledge store. Add a new entry to the *tables* list as shown below.
+
+```
+{
+    "tableName": "clinicalTrialsSmallDiseases",
+    "referenceKeyName": null,
+    "generatedKeyName": "Diseaseid",
+    "source": "/document/tableprojection/sentences/*/diseases/*",
+    "sourceContext": null,
+    "inputs": []
+}
+```
 
 ![](images/EditKnowledgeStore.png)
 
@@ -94,6 +136,22 @@ Click on your index and then select **Index Definition (JSON)** to view the inde
 
 Add a new diseases field to the *fields* list as shown below.
 
+```
+{
+    "name": "diseases",
+    "type": "Collection(Edm.String)",
+    "facetable": true,
+    "filterable": true,
+    "retrievable": true,
+    "searchable": true,
+    "analyzer": "en.microsoft",
+    "indexAnalyzer": null,
+    "searchAnalyzer": null,
+    "synonymMaps": [],
+    "fields": []
+}
+```
+
 ![](images/EditIndex.png)
 
 Click the *Save* button to save the changes. We've now added a new index field for our diseases. Last, we need to map the results of the skill to the new index field by updating the indexer's output field mappings.
@@ -107,6 +165,13 @@ Click on *Azure Cognitive Search* and then select *Indexers*.  You should see th
 Click on your indexer and then select **Indexer Definition (JSON)** to view the index JSON editor in the Azure Portal.  
 
 Add a new entry to the *outputFieldMappings* list as shown below:
+
+```
+{
+    "sourceFieldName": "/document/merged_content/sentences/*/diseases/*/Name",
+    "targetFieldName": "diseases"
+}
+```
 
 ![](images/EditIndexer.png)
 
