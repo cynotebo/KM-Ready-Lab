@@ -30,11 +30,11 @@ Replace *null* with the contents of your clipboard and press *Save*, your indexe
 
 ## Editing the Skillset
 
-We are now going to explore how you can add some very powerful skills to your skillset through the Azure Portal Skillsets editor.  This new capability provides a series of JSON templates that you can easily add and modify to suit your customers needs.  For the purposes of today's lab, we will be working with the **Custom Entity Lookup** skill to add a disease lookup skill to our index.
+We are now going to explore how you can add some very powerful skills to your skillset through the Azure Portal Skillsets editor.  This new capability provides a series of JSON templates that you can easily add and modify to suit your customers needs.  For the purposes of today's lab, we will be working with the *Custom Entity Lookup* skill to add a disease lookup skill to our index.
 
 For now, please use the following Azure Portal URL: https://ms.portal.azure.com/?Microsoft_Azure_Search_enableCustomEntityLookup=true.  The Custom Entity Lookup skill template is not yet generally available in the portal, but will be coming soon.
 
-Click on *Azure Cognitive Search* and then select *Skillsets*.  You should see the **clinical-trials-small** skillset.
+Click on *Azure Cognitive Search* and then select **Skillsets**.  You should see the *clinical-trials-small* skillset.
 
 Click on your skillset and then select **Skillset Definition (JSON)** to view the skillset JSON editor in the Azure Portal.  Exploring your skillset JSON, you will notice there are 8 skills, a Cognitive Services key, and 4 knowledge store table projections.
 
@@ -93,7 +93,7 @@ Note that the output of the skill is a complex type. You will notice in the modu
 
 Next, let's add a new knowledge store table projection for the diseases found.
 
-First we need to edit the *Shaper* skill to create the diseases input for projections. Add a new entry to the *inputs* list as shown below.
+First we need to edit the *Shaper* skill to create the diseases input for projections.  You will notice the Shaper skill has several different inputs. Find the input named *sentences*. Here, you will add a new entry to the inputs list of *sentences* as shown below.
 
 ```
  {
@@ -108,7 +108,7 @@ First we need to edit the *Shaper* skill to create the diseases input for projec
 
 ![](images/EditShaperSkill.png)
 
-Next we need to add the new *clinicalTrialsSmallDiseases* table projection to the knowledge store. Add a new entry to the *tables* list as shown below.
+Next we need to add the new *clinicalTrialsSmallDiseases* table projection to the knowledge store. Add a new entry to the *tables* list in the knowledge store's *projections* list as shown below.
 
 ```
 {
@@ -129,7 +129,7 @@ Click the *Save* button to save the changes. We've now added a new Custom Entity
 
 Now that we've added the new Custom Entity Lookup skill to the skillset, we need to add a new field to the index to store the results of running the skill.
 
-Click on *Azure Cognitive Search* and then select *Indexes*.  You should see the **clinical-trials-small** index.
+Click on *Azure Cognitive Search* and then select **Indexes**.  You should see the *clinical-trials-small* index.
 
 Click on your index and then select **Index Definition (JSON)** to view the index JSON editor in the Azure Portal.  
 
@@ -159,7 +159,7 @@ Click the *Save* button to save the changes. We've now added a new index field f
 
 The last step we need to take is to edit the output field mappings of the indexer so the result of the new Custom Entity Lookup skill is mapped to our new index field for diseases.
 
-Click on *Azure Cognitive Search* and then select *Indexers*.  You should see the **clinical-trials-small** indexer.
+Click on *Azure Cognitive Search* and then select **Indexers**.  You should see the *clinical-trials-small* indexer.
 
 Click on your indexer and then select **Indexer Definition (JSON)** to view the index JSON editor in the Azure Portal.  
 
