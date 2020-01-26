@@ -187,3 +187,4 @@ Wait about 5 minutes for indexer to complete running. After the indexer complete
 ![](images/ViewNewIndexSearchApp.png)
 
 
+### Next: [Module 4: Analyzing extracted data with PowerBI (Optional)](Module&#43;4.md)
