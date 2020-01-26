@@ -99,7 +99,7 @@ In this step, you are designing your Azure Cognitive Search index.  This is an i
       + Make sure all the fields are **retrievable**. 
       + Make sure the fields content and text are set to **retrievable and searchable**
          + content
-         + metadata_icon
+         + trials
          + translated_text
          + merged_content
          + text
