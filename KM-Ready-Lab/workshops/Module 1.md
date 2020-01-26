@@ -54,7 +54,7 @@ Name your skillset: *clinical-trials-small*
 
 + Make sure to select the **OCR enrichment** to extract **merged_content** field.
 
-+ Now we can apply an enrichment to the merged_content field to extract data for locations, key phrases, language and text translation. Do this by checking **Extract location names**, **Extract ky phrases**, **Detect language** and **Translate Text**.
++ Now we can apply an enrichment to the merged_content field to extract data for locations, key phrases, language and text translation. Do this by checking **Extract location names**, **Extract key phrases**, **Detect language** and **Translate Text**.
 
 + Leave all of the other enrichment boxes blank at this time as we will add in additional skills later in the lab.
 
@@ -78,7 +78,7 @@ For this case, we are going to use Azure table projections
 
 We're going to go ahead and create the Knowledge Store now through the Azure Portal and will come back to the visualizations later in the lab.
 
-1. Under **Azure table projections**, make sure *Documents* *Sentences*, *Key Phrases, *Entities* and *Image details* have been selected. 
+1. Under **Azure table projections**, make sure *Documents*, *Sentences*, *Key Phrases*, *Entities*, and *Image details* have been selected. 
 2. Click *choose an existing connection* and select your storage account.
 3. Click on **+ Container** to create a new container called *clinical-trials-small-ks*.
 4. **Select** the container created in the above step.
@@ -99,16 +99,17 @@ In this step, you are designing your Azure Cognitive Search index.  This is an i
       + Make sure all the fields are **retrievable**. 
       + Make sure the fields content and text are set to **retrievable and searchable**
          + content
+         + metadata_icon
          + translated_text
          + merged_content
          + text
-      + Make sure that the following fields are set to **retrievable / facetable / filterable / searchable**.
+      + Make sure that the following fields are set to **retrievable / filterable/ facetable / searchable**.
          + locations
          + key phrases
          + language
-      + Make sure that lastUpdatePosted to **retrievable / facetable /sortable/ filterable**
+      + Make sure that *lastUpdatePosted* is set to **retrievable / filterable / sorable / facetable**
       + Set **English-Microsoft** as the *Analyzer* for all searchable fields since the content is in English.
-      + Select **Suggester** for trials, metadata_author, metadata_title and locations
+      + Select **Suggester** for *keyphrases*
       + You can make layoutText not searchable/retrievable since we won’t need it during this lab.
 
       ![](images/indexdesign.png)
