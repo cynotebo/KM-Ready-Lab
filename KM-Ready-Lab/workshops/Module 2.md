@@ -51,7 +51,7 @@ Click on the link to launch your new web page.
 
 ![](webpage.png)
 
-Type **mor** in the Search window and hit return.  You will now see the articles that contain your search term in the main window.  Note that on the left hand side of the page, you can also further filter your search results using the facets your defined earlier in this exercise.
+Type **mor** in the Search window and hit return.  You will now see the articles that contain your search term in the main window.
 
 ![](images/searchresults.png)
 
