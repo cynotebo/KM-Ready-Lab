@@ -32,8 +32,7 @@ Replace *null* with the contents of your clipboard and press *Save*, your indexe
 
 We are now going to explore how you can add some very powerful skills to your skillset through the Azure Portal Skillsets editor.  This new capability provides a series of JSON templates that you can easily add and modify to suit your customers needs.  For the purposes of today's lab, we will be working with the **Custom Entity Lookup** skill to add a disease lookup skill to our index.
 
-For now, please use the following Azure Portal URL: https://ms.portal.azure.com/?Microsoft_Azure_Search_enableCustomEntityLookup=true
-The Custom Entity Lookup skill template is not yet generally available in the portal, but will be coming soon.
+For now, please use the following Azure Portal URL: https://ms.portal.azure.com/?Microsoft_Azure_Search_enableCustomEntityLookup=true.  The Custom Entity Lookup skill template is not yet generally available in the portal, but will be coming soon.
 
 Click on *Azure Cognitive Search* and then select *Skillsets*.  You should see the **clinical-trials-small** skillset.
 
@@ -51,7 +50,7 @@ One easy way to retrieve the SAS URI is by using Azure Storage Explorer. You can
 
 ![](images/GetSAS.png)
 ![](images/GetSASExpiryTime.png)
-![](images/GetSASCopyUrl.png)
+![](images/GetSASCopyURL.png)
 
 Now you have everything we need to add this skill to your skillset JSON file.  Using the *Custom Entity Lookup Skill* template as a starting guide, fill in all properties as below and add the new skill into the *skills* list in the Skillset JSON.
 
