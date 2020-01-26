@@ -157,7 +157,7 @@ Click the *Save* button to save the changes. We've now added a new index field f
 
 ## Editing the Indexer
 
-The last step we need to take is to edit the output field mappings of the indexer so the result of the new Custom Entity Lookup skill is mapped to our new index field for diseases.
+The last step we need to take is to edit the output field mappings of the indexer so the result of the new Custom Entity Lookup skill is mapped to the new *diseases* index field.
 
 Click on *Azure Cognitive Search* and then select **Indexers**.  You should see the *clinical-trials-small* indexer.
 
