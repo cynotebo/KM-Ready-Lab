@@ -1,6 +1,8 @@
-# Pre-Requisites for Knowledge Mining Workshop
+# Pre-Requisites for Knowledge Mining Ready Lab
 
-Please make sure you fulfill the following pre-requisites before starting the workshop.
+If you attended this lab as part of the Microsoft Ready event, you were provided an environment which was preloaded with all of the Azure resources you needed, including the sample dataset that is used to complete all of the activities covered in this lab. 
+
+We are making all of this information available to you here should you wish to work on this lab in your own Azure subscription to further your understanding of the materials which were presented at Winter Ready.  In order to complete this lab, you will need to complete the following pre-reqisites before beginning.
 
 1.	Have your own Azure account 
 1.	Be familiar [Azure Portal](https://portal.azure.com)
