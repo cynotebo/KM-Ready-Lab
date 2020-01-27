@@ -9,6 +9,8 @@ Click on Create Search App at the top of the screen.
 
 ![](images/createappbutton.png)
 
+*Note - you may get a message that CORS needs to be enabled.  If you see this window, plesase click on Enable CORS in order to proceed*.
+
 You should now see the application designer view that we will be walking through to build our web page.
 
 ![](images/design1.png)
