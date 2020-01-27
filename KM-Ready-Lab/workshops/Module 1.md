@@ -97,7 +97,7 @@ In this step, you are designing your Azure Cognitive Search index.  This is an i
 
 4.	In the index definition fields:
       + Make sure all the fields are **retrievable**. 
-      + Make sure the fields content and text are set to **retrievable and searchable**
+      + Make sure the following fields are set to **retrievable and searchable**
          + content
          + trials
          + translated_text
@@ -107,7 +107,7 @@ In this step, you are designing your Azure Cognitive Search index.  This is an i
          + locations
          + key phrases
          + language
-      + Make sure that *lastUpdatePosted* is set to **retrievable / filterable / sorable / facetable**
+      + Make sure that *lastUpdatePosted* is set to **retrievable / filterable / sortable / facetable**
       + Set **English-Microsoft** as the *Analyzer* for all searchable fields since the content is in English.
       + Select **Suggester** for *keyphrases*
       + You can make layoutText not searchable/retrievable since we won’t need it during this lab.
@@ -132,11 +132,12 @@ In this step, you are designing your Azure Cognitive Search index.  This is an i
    ![](images/chkstatus2.png)
 
 ## Searching the Content
-Now that the content has been indexed, we can use the portal to test some search queries.  For the purposes of this lab, we'll walk through one very quick example of this.  If you'd like to explore more on this topic, you can find additional examples of search queries in **Module 1** of the [KM Workshop](https://github.com/Azure-Samples/azure-search-knowledge-mining/blob/master/workshops/Module%201.md) as well as examples of how to use Postman to explore your index.
+Now that the content has been indexed, we can use the portal to test some search queries.  For the purposes of this lab, we'll walk through one very quick example of this.  
 
 Open the **Search explorer** and enter a search query such as "MPS" to allow us to find all document that refer to the disease MPS, and press "Search". Try adjusting the query with different phrases and terms to get an idea of the content.
  
  ![](images/srchexplore.png)
  
-
+ If you'd like to explore more on this topic, you can find additional examples of search queries in **Module 1** of the [KM Workshop](https://github.com/Azure-Samples/azure-search-knowledge-mining/blob/master/workshops/Module%201.md) as well as examples of how to use Postman to explore your index.
+ 
 ### Next: [Module 2: Visualizing the Results with the Create Search App](Module&#32;2.md)
