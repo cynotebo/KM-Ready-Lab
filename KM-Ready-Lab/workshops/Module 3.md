@@ -42,27 +42,47 @@ On the right had side,  you see the Skill Definition Templates that are provided
 
 ![](images/CustomEntityLookupSkillTemplate.png)
 
-Let's look a little deeper at this JSON template. Notice the Custom Entity Lookup skill allows you to specify a list of entities to find in your text. You can provide this list either inline using the *inlineEntitiesDefinition* parameter or via a SAS URI pointing to a JSON file containing the entities using the *entitiesDefinitionUrl* parameter.
+Let's look a little deeper at this JSON template. Notice the Custom Entity Lookup skill allows you to specify a list of entities to find in your text. You can provide this list either inline using the *inlineEntitiesDefinition* parameter or via a SAS URI pointing to a JSON file containing the entities using the *entitiesDefinitionUrl* parameter.  Click on the *Copy to clipboard* button and then **paste** the template for this skill into the **skills** section of the JSON definition.
 
-For this lab, we have provided you with a container in your blob storage account named 'disease' which contains a file called 'diseases.json', a list of diseases to be used with the Custom Entity Lookup skill. You will need to retrieve the SAS URI for this file to provide as the *entitiesDefinitionUri* parameter of the skill.
+![](images/updateskillset.png)
+
+Now we can update the template with the correct parameters so that this new skill will work.
+
+    1. Set *defaultLanguageCode* to **en**
+    2. Add the URI code from the *diseases* JSON file to *entitiesDefinitionUri*
+
+*Note For this lab, we have provided you with a container in your blob storage account named 'disease' which contains a file called 'diseases.json', a list of diseases to be used with the Custom Entity Lookup skill. You will need to retrieve the SAS URI for this file to provide as the *entitiesDefinitionUri* parameter of the skill.
 
 One easy way to retrieve the SAS URI is by using Azure Storage Explorer. You can right-click on the 'diseases.json' file and select *Get Shared Access Signature*. Set the *Expiry time* to some time in the future, and hit the *Create* button. Use the *Copy* button to copy the *URL*.
 
 ![](images/GetSAS.png)
+
 ![](images/GetSASExpiryTime.png)
+
 ![](images/GetSASCopyURL.png)
 
-Now you have everything we need to add this skill to your skillset JSON file.  Using the *Custom Entity Lookup Skill* template as a starting guide, fill in all properties as below and add the new skill into the *skills* list in the Skillset JSON.
+
+    3. *Delete* **inlineEntitiesDefinition** and all of the parameters contained between the [] brackets.
+    4. Set *name* to **customEntityLookup**
+    5. Set *description* to **null**
+    6. Set *context* to **/document/merged_content/sentences/***
+    7. Under inputs set *name* to **text**
+    8. Under inputs set *source* to **/document/merged_content/sentences/***
+    9. Under outputs set *name* to **entities**
+    10. Under outputs set *targetName* to **diseases**
+
+Your updated JSON file should now look like the code below (alternately,  you can just cut and paste this code snippet directly into your Skillset Definition.
 
 
 ```
     {
         "@odata.type": "#Microsoft.Skills.Text.CustomEntityLookupSkill",
+        "defaultLanguageCode": "en",
+         "entitiesDefinitionUri": "<enter your SAS URI here>",
+         
         "name": "customEntityLookup",
         "description": null,
         "context": "/document/merged_content/sentences/*",
-        "defaultLanguageCode": "en",
-        "entitiesDefinitionUri": "<enter your SAS URI here>",
         "inputs": [{
             "name": "text",
             "source": "/document/merged_content/sentences/*"
@@ -71,8 +91,7 @@ Now you have everything we need to add this skill to your skillset JSON file.  U
             "name": "entities",
             "targetName": "diseases"
         }],
-        "inlineEntitiesDefinition": []
-    }
+      }
 ```
 
 ![](images/AddCustomEntityLookupSkill.png)
