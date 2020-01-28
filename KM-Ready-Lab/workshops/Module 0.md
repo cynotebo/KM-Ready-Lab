@@ -33,8 +33,6 @@ Select Account kind: *StorageV2 (general purpose v2)*
 
   *Note - You need to create the Cognitive Services resource in the same region as you Azure Search resource.*
 
-10.	**Install** [Visual Studio 2019](https://visualstudio.microsoft.com/). Make sure you can create ASP.Net websites with it.
-11. **Install** [Postman](https://www.getpostman.com/)
-11. **Install** [PowerBI desktop](https://powerbi.microsoft.com/en-us/desktop/).
+5.  **Install** [PowerBI desktop](https://powerbi.microsoft.com/en-us/desktop/).
 
 ### Next: [Module 1: Using Azure Portal to Create Your Index - No Code Required](Module&#32;1.md)
