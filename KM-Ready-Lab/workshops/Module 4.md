@@ -1,5 +1,5 @@
 # Module 4: Analyzing extracted data with PowerBI (Optional)
-In this optional module, we'll show you how you can further extend visualization of the data through Power BI and how this structured data could be useful in scenarios that go beyond Search. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data
+In this optional module, we'll show you how you can further extend visualization of the data through Power BI and how this structured data could be useful in scenarios that go beyond Search. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data.
 
 Let's look at the tables we created when we built the Knowledge Store in module 1:
 
@@ -11,6 +11,41 @@ We see two tables, one for the documents and another one for each of the entitie
 ![](images/kstable2.png)
 
 Now that we projected information to the Knowledge Store, this structured data could be useful in scenarios that go beyond Search.  This data could be useful for analytics, to train an ML model, or simply to maintain a cache of any extractions we produced. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data.
+
+# Adding a table projection for diseases in the Knowledge Store.
+
+In module 1, we created a Knowledge Store as part of the index creation process.  In module 3, we added the customEntityLookup skill to extract a new entity, diseases from our data and then we added this field to our search index and modified the indexer to give us the desired output for this data in the *search index*.  However, we still need to add this new skill to the knowledge store so that it can be used as part of the PowerBI visualizations we'll be exploring below.
+
+First we need to edit the *Shaper* skill to create the diseases input for projections.  You will notice the Shaper skill has several different inputs. Find the input named *sentences*. Here, you will add a new entry to the inputs list of *sentences* as shown below.
+
+```
+ {
+     "name": "diseases",
+     "sourceContext": "/document/merged_content/sentences/*/diseases/*",
+     "inputs": [{
+         "name": "disease",
+         "source": "/document/merged_content/sentences/*/diseases/*/Name"
+     }]
+ }
+```
+![](images/EditShaperSkill.png)
+
+Next we need to add the new *clinicalTrialsSmallDiseases* table projection to the knowledge store. Add a new entry to the *tables* list in the knowledge store's *projections* list as shown below.
+
+```
+{
+    "tableName": "clinicalTrialsSmallDiseases",
+    "referenceKeyName": null,
+    "generatedKeyName": "Diseaseid",
+    "source": "/document/tableprojection/sentences/*/diseases/*",
+    "sourceContext": null,
+    "inputs": []
+}
+```
+
+![](images/EditKnowledgeStore.png)
+
+Click the *Save* button to save the changes. We've now added a new Custom Entity Lookup skill to our skillset and added a new knowledge store table projection to store the results. Next, we need to update our index to add the results of the new skill.
 
 # Analyzing extracted data with PowerBI
 
@@ -111,7 +146,7 @@ Congratulations! Now you have an interactive report. Here are a few fun exercise
  
     ![](images/mod5/ks-pbi-visual6-directed-graph.png)
 
-### Next: [Optional: Module 7: Indexing data from Azure SQL](Module&#32;7.md)
+
 
 
 
