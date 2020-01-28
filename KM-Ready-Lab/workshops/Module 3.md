@@ -77,6 +77,7 @@ Now you have everything we need to add this skill to your skillset JSON file.  U
 
 ![](images/AddCustomEntityLookupSkill.png)
 
+Click the *Save* button to save the changes. We've now added the new Custom Entity skill to the skillset.
 
 ## Editing the Index
 
