@@ -150,7 +150,7 @@ Click on *Azure Cognitive Search* and then select **Indexers**.  You should see 
 
 Click on your indexer and then select **Indexer Definition (JSON)** to view the index JSON editor in the Azure Portal.  
 
-Add a new entry to the *outputFieldMappings* list as shown below:
+Add a new entry to the *outputFieldMappings* by copying and pasting the code below:
 
 ```
 {
