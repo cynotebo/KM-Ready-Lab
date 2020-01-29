@@ -15,7 +15,7 @@ A you can see, the information that we have projected to the Knowledge Store is 
 
 In module 1, we created a Knowledge Store as part of the index creation process.  In module 3, we added the customEntityLookup skill to extract a new entity, diseases from our data and then we added this field to our search index and modified the indexer to give us the desired output for this data in the *search index*.  However, we still need to add this new skill to the knowledge store so that it can be used as part of the PowerBI visualizations we'll be exploring below.
 
-First we need to edit the *Shaper* skill to create the diseases input for projections.  To do this,we will be making another modification to the *Index Skillset Definition JSON*. 
+First we need to edit the [Shaper skill](https://docs.microsoft.com/en-us/azure/search/cognitive-search-skill-shaper) to create the diseases input for projections.  To do this,we will be making another modification to the *Index Skillset Definition JSON*. 
 
  1. Click on *Azure Cognitive Seach* and select *Skillsets* and click on *clinical-trials-small*.
  2. Click on *Skillset Definition (JSON).*
