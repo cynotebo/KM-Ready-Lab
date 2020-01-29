@@ -132,7 +132,7 @@ Click the *Save* button to save the changes. We've now added a new index field f
 
 The last step we need to take is to edit the output field mappings of the indexer so the result of the new Custom Entity Lookup skill is mapped to the new *diseases* index field.
 
-The output of the new disease skill is a complex type, for now, we'll only be using the *Name* property of the skill result in our index.
+The output of the new disease skill is a [complex type](https://docs.microsoft.com/en-us/azure/search/search-howto-complex-data-types), for now, we'll only be using the *Name* property of the skill result in our index.
 
 ```
 {
