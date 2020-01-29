@@ -1,5 +1,5 @@
 # Module 2: Visualizing the Results with the Create Search App
-Now that you've built your Search index, we'll take a moment to visualize your results using the new **Create Search App** feature in the Azure Portal.  This is a new experience that we've devloped to allow developers to quickly create standalone search experiences to explore Azure Cognitive Search indexes.
+Now that you've built your Search index, we'll take a moment to visualize your results using the new **Create Search App** feature in the Azure Portal.  This is a new experience that we've developed to allow developers to quickly create standalone search experiences to explore Azure Cognitive Search indexes.
 
 *Note, the web page that is developed by the Create Search App is for DEMO purposes only, it should not be used to implement a production front end.*
 
