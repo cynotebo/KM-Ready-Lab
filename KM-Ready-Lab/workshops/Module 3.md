@@ -65,9 +65,9 @@ One easy way to retrieve the SAS URI is by using Azure Storage Explorer. You can
     3. *Delete* **inlineEntitiesDefinition** and all of the parameters contained between the [] brackets.
     4. Set *name* to **customEntityLookup**
     5. Set *description* to **null**
-    6. Set *context* to **/document/merged_content/sentences/***
+    6. Set *context* to /document/merged_content/sentences/*
     7. Under inputs set *name* to **text**
-    8. Under inputs set *source* to **/document/merged_content/sentences/***
+    8. Under inputs set *source* to /document/merged_content/sentences/*
     9. Under outputs set *name* to **entities**
     10. Under outputs set *targetName* to **diseases**
 
