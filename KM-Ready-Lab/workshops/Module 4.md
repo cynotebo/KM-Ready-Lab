@@ -3,20 +3,27 @@ In this optional module, we'll show you how you can further extend visualization
 
 Let's look at the tables we created when we built the Knowledge Store in module 1:
 
-We see two tables, one for the documents and another one for each of the entities identified in those documents 
+We see four table one each for: documents, entities, key phrases and sentences identified in those documents 
 
-![](images/kstable.png)
+![](images/kstables.png)
 
+*Note - If you would like to explore the data in these tables further, you can also open them through Storage Explorer.*
 
-![](images/kstable2.png)
-
-Now that we projected information to the Knowledge Store, this structured data could be useful in scenarios that go beyond Search.  This data could be useful for analytics, to train an ML model, or simply to maintain a cache of any extractions we produced. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data.
+A you can see, the information that we have projected to the Knowledge Store is structured and could be useful in scenarios that go beyond Search.  For instance, this data could be useful for analytics, to train an ML model, to kick off an RPA or simply to maintain a cache of any extractions we produced. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data.  But first, we need to add our new *diseases* entity to the Knowledge Store.
 
 # Adding a table projection for diseases in the Knowledge Store.
 
 In module 1, we created a Knowledge Store as part of the index creation process.  In module 3, we added the customEntityLookup skill to extract a new entity, diseases from our data and then we added this field to our search index and modified the indexer to give us the desired output for this data in the *search index*.  However, we still need to add this new skill to the knowledge store so that it can be used as part of the PowerBI visualizations we'll be exploring below.
 
-First we need to edit the *Shaper* skill to create the diseases input for projections.  You will notice the Shaper skill has several different inputs. Find the input named *sentences*. Here, you will add a new entry to the inputs list of *sentences* as shown below.
+First we need to edit the *Shaper* skill to create the diseases input for projections.  To do this,we will be making another modification to the *Index Skillset Definition JSON*. 
+
+ 1. Click on *Azure Cognitive Seach* and select *Skillsets* and click on *clinical-trials-small*.
+ 2. Click on *Skillset Definition (JSON).*
+ 3. Scroll down the list of skills until you see the **"@odata.type": "#Microsoft.Skills.Util.ShaperSkill",** (This will likely be the last of the skills defined in your JSON file).
+ 
+ ![](images/shaperskill2.png)
+ 
+You will notice the Shaper skill has several different inputs. Find the input named *sentences*. Here, you will add a new entry to the inputs list of *sentences*.  Cut and paste the code below.
 
 ```
  {
@@ -30,7 +37,11 @@ First we need to edit the *Shaper* skill to create the diseases input for projec
 ```
 ![](images/EditShaperSkill.png)
 
-Next we need to add the new *clinicalTrialsSmallDiseases* table projection to the knowledge store. Add a new entry to the *tables* list in the knowledge store's *projections* list as shown below.
+Next we need to add the new *clinicalTrialsSmallDiseases* table projection to the knowledge store.  Scroll further down the JSON file until you see *knowledgeStore*
+
+![](images/kstore.png)
+
+Add a new entry to the *tables* list in the knowledge store's *projections* list by cutting and pasting the code below.
 
 ```
 {
@@ -45,7 +56,11 @@ Next we need to add the new *clinicalTrialsSmallDiseases* table projection to th
 
 ![](images/EditKnowledgeStore.png)
 
-Click the *Save* button to save the changes. We've now added a new Custom Entity Lookup skill to our skillset and added a new knowledge store table projection to store the results. Next, we need to update our index to add the results of the new skill.
+Click the *Save* button to save the changes. We've now added a new knowledge store table projection to store the results, reset your indexer and run again to process these changes into the Knowledge store.  Wait a few minutes and then review your knowledge store tables again.  You should now see a new table *Diseases*.
+
+![](images/ksdiseases.png)
+
+We are now ready to start exploring this data with PowerBI
 
 # Analyzing extracted data with PowerBI
 
