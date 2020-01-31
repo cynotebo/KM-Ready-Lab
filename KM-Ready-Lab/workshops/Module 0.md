@@ -15,17 +15,23 @@ We are making all of this information available to you here should you wish to w
 Select Performance: *Standard* tier, not Premium
 Select Account kind: *StorageV2 (general purpose v2)*
 4. **Install** [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
-4. **Copy** the storage container that holds clinical trials from a read only location to your Storage Account.
+4. You will need to **copy** two storage containers that hold the clinical trials data for this lab from a read only location to your Storage Account.
     1. **Open** Azure Storage Explorer and select *Managed Accounts*, *Add and Account...*, *Use a shared access signature (SAS) URI*. The *Display name* will autofill. Select *Next*
-    1. **Add** the following *URI*, then select *Next*, then select *Connect*
+    1. **Add** the following *URI*, then select *Next*, then select *Connect* to add the *clinical-trials-small* container.
         ```
-        See email for connect information
-        ```
+        https://clinicalsmall.blob.core.windows.net/clinical-trials-small?st=2020-01-31T21%3A51%3A29Z&se=2021-02-01T21%3A51%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=4%2BUe2%2B3RfbdKg9DGhqeWMUYI2oDI7nFOKrwEWpPSgdQ%3D
+        ```       
     3. **Select** *Toggle Explorer* to view the Explorer. Right click on the *clinical-trials-small* Blob Container that you just connected to and select *Copy Blob Container*
         ![](images/copyblobcontainer.png)
     3. **Find** your Storage Account in the Explorer. Right click on its *Blob Containers* and select *Paste Blob Container*.
         ![](images/pasteblobcontainer.png)
     1. Confirm that the container copied successfully by checking the Activities at the bottom of the Azure Storage Explorer.
+    
+    2. Repeat the steps above to add the *diseases* storage container as well using the following URI to connect:
+        ```
+        https://clinicalsmall.blob.core.windows.net/diseases?st=2020-01-31T21%3A54%3A56Z&se=2021-02-01T21%3A54%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=SqZXItNjZI3Eu6kTPu8Poov0rYnICSQuXJ0buOWOQhk%3D
+        ```
+    
 4.	**Create** an [Azure Search](https://docs.microsoft.com/en-us/azure/search/search-create-service-portal) resource. (A Free Tier should be sufficient for this workshop).
 [Learn more](https://docs.microsoft.com/en-us/azure/search/search-sku-tier)
 
