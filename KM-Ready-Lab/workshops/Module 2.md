@@ -1,4 +1,6 @@
-# Module 2: Visualizing the Results with the Create Search App
+# Module 2: Visualizing the Results
+
+## Search Index
 Now that you've built your Search index, we'll take a moment to visualize your results using the new **Create Search App** feature in the Azure Portal.  This is a new experience that we've developed to allow developers to quickly create standalone search experiences to explore Azure Cognitive Search indexes.
 
 *Note, the web page that is developed by the Create Search App is for DEMO purposes only, it should not be used to implement a production front end.*
@@ -65,7 +67,30 @@ To further accelerate your development efforts, we have provided you with a numb
 
 And you are always welcome to build your own custom front-end experience as customer needs dictate.  Connection to your Azure Search index is as easy as integrating an API call through a tool such as Visual Studio to bring your search experience to life.
 
+## Knowledge Store
+Now that you've built your knowledge store, we'll take a moment to visualize your results using the Power BI template provided in the portal.
 
+To get started, click on your *clinical-trials-small* skillset. From here, click on the *Knowledge Store* tab.
+
+This shows you a built-in Power BI template you can use with you knowledge store, as well as parameters to fill in on the template once launched.
+
+![](images/PowerBI1.png)
+
+Click on the *Get Power BI Template* button to find the .pbit file on GitHub. Download the template, then open the template with Power BI.
+
+![](images/PowerBI2.png)
+
+Fill in all of the parameters as listed from the Azure Portal and load the report.
+
+![](images/PowerBI3.png)
+
+Once the report finishes loading, you can explore the data from your Knolwedge Store in analytics form. You'll notice the content from the document as well as the AI enrichments extracted appear in the report, as well as a BM25 relevancy graph generated over the entire corpus.
+
+![](images/PowerBI4.png)
+
+You can also explore relationship visually with graphs in PowerBI. Click on the *Keyphrase-Graph-Viewer* tab to see the different relationships among the key phrases extracted.
+
+![](images/PowerBI5.png)
 
 ### Next: [Module 3: Using the Azure Portal to Iterate on Your Solution](Module&#32;3.md)
 
