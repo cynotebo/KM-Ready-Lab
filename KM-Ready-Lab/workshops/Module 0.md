@@ -27,7 +27,7 @@ Select Account kind: *StorageV2 (general purpose v2)*
         ![](images/pasteblobcontainer.png)
     1. Confirm that the container copied successfully by checking the Activities at the bottom of the Azure Storage Explorer.
     
-    2. Repeat the steps above to add the *diseases* storage container as well using the following URI to connect:
+    2. **Repeat** the steps above to add the *diseases* storage container using the following URI to connect:
         ```
         https://clinicalsmall.blob.core.windows.net/diseases?st=2020-01-31T21%3A54%3A56Z&se=2021-02-01T21%3A54%3A00Z&sp=rl&sv=2018-03-28&sr=c&sig=SqZXItNjZI3Eu6kTPu8Poov0rYnICSQuXJ0buOWOQhk%3D
         ```
