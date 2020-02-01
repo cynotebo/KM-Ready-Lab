@@ -140,4 +140,4 @@ Open the **Search explorer** and enter a search query such as "MPS" to allow us 
  
  If you'd like to explore more on this topic, you can find additional examples of search queries in **Module 1** of the [KM Workshop](https://github.com/Azure-Samples/azure-search-knowledge-mining/blob/master/workshops/Module%201.md) as well as examples of how to use Postman to explore your index.
  
-### Next: [Module 2: Visualizing the Results with the Create Search App](Module&#32;2.md)
+### Next: [Module 2: Visualizing the Results](Module&#32;2.md)
