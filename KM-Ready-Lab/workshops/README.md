@@ -31,7 +31,7 @@ We will also provide you links to additional resources and tools that can be use
 + [Module 0 - Pre-Requisites](./Module%200.md) (*only required if not taking this lab as part of Winter Ready*)
 + [Module 1 - Using Azure Portal to Create your Index - No Code Required](./Module%201.md)
 + [Module 2 - Visualizing the Results with the Create Search App](./Module%202.md)
-+ [Module 3 - Using teh Azure Portal to Iterate on Your Solution](./Module%203.md)
++ [Module 3 - Using the Azure Portal to Iterate on Your Solution](./Module%203.md)
 + [Module 4 - Optional- Analyzing extracted data with PowerBI](./Module%204.md)
 
 

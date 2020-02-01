@@ -84,7 +84,7 @@ Fill in all of the parameters as listed from the Azure Portal and load the repor
 
 ![](images/PowerBI3.png)
 
-Once the report finishes loading, you can explore the data from your Knolwedge Store in analytics form. You'll notice the content from the document as well as the AI enrichments extracted appear in the report, as well as a BM25 relevancy graph generated over the entire corpus.
+Once the report finishes loading, you can explore the data from your Knowledge Store in analytics form. You'll notice the content from the document as well as the AI enrichments extracted appear in the report, as well as a BM25 relevancy graph generated over the entire corpus.
 
 ![](images/PowerBI4.png)
 
