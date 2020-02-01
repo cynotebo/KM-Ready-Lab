@@ -30,7 +30,7 @@ Replace *null* with the contents of your clipboard and press *Save*, your indexe
 
 ## Editing the Skillset
 
-We are now going to explore how you can add some very powerful skills to your skillset through the Azure Portal Skillsets editor.  This new capability provides a series of JSON templates that you can easily add and modify to suit your customers needs.  For the purposes of today's lab, we will be working with the *Custom Entity Lookup* skill to add a disease lookup skill to our index.
+We are now going to explore how you can add some very powerful skills to your skillset through the Azure Portal Skillsets editor.  This new capability provides a series of JSON templates that you can easily add and modify to suit your customers needs.  For the purposes of today's lab, we will be working with the [Custom Entity Lookup skill](https://docs.microsoft.com/en-us/azure/search/cognitive-search-skill-custom-entity-lookup) to add a disease lookup skill to our index.
 
 For now, please use the following Azure Portal URL: https://ms.portal.azure.com/?Microsoft_Azure_Search_enableCustomEntityLookup=true.  The Custom Entity Lookup skill template is not yet generally available in the portal, but will be coming soon.
 
