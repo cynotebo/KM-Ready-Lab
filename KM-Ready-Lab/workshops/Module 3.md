@@ -8,7 +8,7 @@ Before we start adding to our skillset, we will want to enable the new [incremen
 1. Open your Azure Cognitive Search service.
 2. Click on the *Indexer* you created in module 1
 3. Click on the **Reset** button. Prior to using the cache for the first time, the indexer must be reset.
-4. Click on *Indexer Definition (JSON)*.  You will see the JSON defintion of your indexer on the left hand side of the screen.  On the right hand side, you will see some informaton about Indexers and the Indexer Cache.  Click on the blue button **Get Cache Connection String**.
+4. Click on *Indexer Definition (JSON)*.  You will see the JSON definition of your indexer on the left hand side of the screen.  On the right hand side, you will see some information about Indexers and the Indexer Cache.  Click on the blue button **Get Cache Connection String**.
 
 ![](images/cachestring.png)
 
@@ -24,7 +24,7 @@ Scroll to the bottom of the Indexer Definition JSON file until you see *'cache':
 
 ![](images/cachenull.png)
 
-Replace *null* with the contents of your clipboard and press *Save*, your indexer defintion JSON should not look something like this:
+Replace *null* with the contents of your clipboard and press *Save*, your indexer definition JSON should not look something like this:
 
 ![](images/cachetrue.png)
 
@@ -47,9 +47,8 @@ Let's look a little deeper at this JSON template. Notice the Custom Entity Looku
 ![](images/updateskillset.png)
 
 Now let's update the template with the correct parameters so that this new skill will work.
-
-    1. Set *defaultLanguageCode* to **en**
-    2. Add the URI code from the *diseases* JSON file to *entitiesDefinitionUri*
+1. Set *defaultLanguageCode* to *"en"*
+2. Add the URI code from the *diseases* JSON file to *entitiesDefinitionUri*
 
 *Note For this lab, we have provided you with a container in your blob storage account named 'disease' which contains a file called 'diseases.json', a list of diseases to be used with the Custom Entity Lookup skill. You will need to retrieve the SAS URI for this file to provide as the *entitiesDefinitionUri* parameter of the skill.  
 
