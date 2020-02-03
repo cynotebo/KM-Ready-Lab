@@ -3,13 +3,13 @@ In this optional module, we'll show you how you can further extend visualization
 
 Let's look at the tables we created when we built the Knowledge Store in module 1:
 
-We see four table one each for: documents, entities, key phrases and sentences identified in those documents 
+We see four tables one each for: documents, entities, key phrases and sentences identified in those documents 
 
 ![](images/kstables.png)
 
 *Note - If you would like to explore the data in these tables further, you can also open them through Storage Explorer.*
 
-A you can see, the information that we have projected to the Knowledge Store is structured and could be useful in scenarios that go beyond Search.  For instance, this data could be useful for analytics, to train an ML model, to kick off an RPA or simply to maintain a cache of any extractions we produced. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data.  But first, we need to add our new *diseases* entity to the Knowledge Store.
+As you can see, the information that we have projected to the Knowledge Store is structured and could be useful in scenarios that go beyond Search.  For instance, this data could be useful for analytics, to train an ML model, to kick off an RPA or simply to maintain a cache of any extractions we produced. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data.  But first, we need to add our new *diseases* entity to the Knowledge Store.
 
 # Adding a table projection for diseases in the Knowledge Store.
 
