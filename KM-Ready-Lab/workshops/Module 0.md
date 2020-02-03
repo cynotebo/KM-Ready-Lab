@@ -5,10 +5,10 @@ If you attended this lab as part of the Microsoft Ready event, you were provided
 We are making all of this information available to you here should you wish to work on this lab in your own Azure subscription to further your understanding of the materials which were presented at Winter Ready.  In order to complete this lab, you will need to complete the following pre-reqisites before beginning.
 
 1.	Have your own Azure account 
-1.	Be familiar [Azure Portal](https://portal.azure.com)
+1.	Be familiar with the [Azure Portal](https://portal.azure.com)
 1.	Make sure you can create Azure resources in your subscription (including paid resources).
 
-  *Note, if your organizations policy prohibits you from creating resources in the subscription, you can use a [free subscription](https://signup.azure.com) for the purposes of this lab.*
+  *Note, if your organization's policy prohibits you from creating resources in the subscription, you can use a [free subscription](https://signup.azure.com) for the purposes of this lab.*
 
 4. Create a resource group for this workshop where you will add each of the resources you will create in the next steps.
 4. **Create** an [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
