@@ -1,5 +1,5 @@
 # Module 4: Analyzing extracted data with PowerBI (Optional)
-In this optional module, we'll show you how you can further extend visualization of the data through Power BI and how this structured data could be useful in scenarios that go beyond Search. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data.
+In this optional module, we'll show you how you can further extend visualization of the data through Power BI and how this structured data could be useful in scenarios that go beyond Search. In this module we’ll connect the table projections we created to PowerBI and create a few sample graphs with the extracted data. You'll also get a chance to see the benefits of the cache enabled in module 3 when we make updates to the Knowledge Store.
 
 Let's look at the tables we created when we built the Knowledge Store in module 1:
 
@@ -56,7 +56,11 @@ Add a new entry to the *tables* list in the knowledge store's *projections* list
 
 ![](images/EditKnowledgeStore.png)
 
-Click the *Save* button to save the changes. We've now added a new knowledge store table projection to store the results, reset your indexer and run again to process these changes into the Knowledge store.  Wait a few minutes and then review your knowledge store tables again.  You should now see a new table *Diseases*.
+Click the *Save* button to save the changes. We've now added a new knowledge store table projection to store the results.
+
+To process these changes into the Knowledge Store, we just need to *run* the indexer again. We do not need to reset the indexer because we can take advantage of the incremental processing capability of the cache we added in the first step of module 3. When we run the indexer, Azure Cognitive Search will only be running the Shaper Skill and Knowledge Store updates rather than running all of the skills against the data set.  As a result, the indexer run will be much faster and should only take about 2 minutes.
+
+After the indexer runs, review your knowledge store tables again.  You should now see a new table *Diseases*.
 
 ![](images/ksdiseases.png)
 
