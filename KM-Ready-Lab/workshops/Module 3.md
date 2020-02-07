@@ -28,6 +28,8 @@ Replace *null* with the contents of your clipboard and press *Save*, your indexe
 
 ![](images/cachetrue.png)
 
+Once the indexer has run once with the cache enabled, incremental changes (such as adding a new skill) will not require the indexer to be reset in order to pick up the changes.  During the next indexer run, the new changes will be automatically detected and only new work will be done.  This saves time as well as money on the enrichment and normalized images cost.  You will get to see this in action in module 4, where you will make incremental changes and get to see how much faster the indexer run completes.
+
 ## Editing the Skillset
 
 We are now going to explore how you can add some very powerful skills to your skillset through the Azure Portal Skillsets editor.  This new capability provides a series of JSON templates that you can easily add and modify to suit your customers needs.  For the purposes of today's lab, we will be working with the [Custom Entity Lookup skill](https://docs.microsoft.com/en-us/azure/search/cognitive-search-skill-custom-entity-lookup) to add a disease lookup skill to our index.
@@ -162,7 +164,9 @@ Add a new entry to the *outputFieldMappings* by copying and pasting the code bel
 
 Click the *Save* button to save the changes.
 
-Click the *Run* button to run the indexer again with these changes.  Note, this is also where we are taking advantage of the incremental processing capability and cache we added in the first step of this module as when we run the indexer, Azure Cognitive Search will only be running the new customEntityLookup skill we just added to our skillset rather than running all of the skills against the data set. 
+Click the *Run* button to run the indexer again with these changes.  
+
+Note that this indexer run will take about 6 minutes. Even though we enabled incremental processing with the cache in the first step of this module, we will only see the advantages of this feature after the cache has been populated by running the indexer for the first time with the feature enabled.  In the next module, we will get a chance to make more incremental changes and see how much faster the indexer runs with the advantages of the cache.
 
 ## Results
 
