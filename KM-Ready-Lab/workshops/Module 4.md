@@ -31,7 +31,7 @@ You will notice the Shaper skill has several different inputs. Find the input na
      "sourceContext": "/document/merged_content/sentences/*/diseases/*",
      "inputs": [{
          "name": "disease",
-         "source": "/document/merged_content/sentences/*/diseases/*/Name"
+         "source": "/document/merged_content/sentences/*/diseases/*/name"
      }]
  }
 ```
