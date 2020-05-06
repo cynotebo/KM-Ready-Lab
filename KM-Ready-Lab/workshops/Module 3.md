@@ -91,7 +91,7 @@ Your updated JSON file should now look like the code below (alternately,  you ca
         "outputs": [{
             "name": "entities",
             "targetName": "diseases"
-        }],
+        }]
       }
 ```
 
@@ -137,12 +137,12 @@ The output of the new disease skill is a [complex type](https://docs.microsoft.c
 
 ```
 {
-    "Name": "morquio",
-    "Matches": [{
-        "Text": "morquio",
-        "Offset": 25,
-        "Length": 7,
-        "MatchDistance": 0.0
+    "name": "morquio",
+    "matches": [{
+        "text": "morquio",
+        "offset": 25,
+        "length": 7,
+        "matchDistance": 0.0
     }]
 }
 ```
@@ -155,7 +155,7 @@ Add a new entry to the *outputFieldMappings* by copying and pasting the code bel
 
 ```
 {
-    "sourceFieldName": "/document/merged_content/sentences/*/diseases/*/Name",
+    "sourceFieldName": "/document/merged_content/sentences/*/diseases/*/name",
     "targetFieldName": "diseases"
 }
 ```
